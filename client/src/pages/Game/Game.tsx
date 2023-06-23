@@ -13,7 +13,7 @@ import {
 import ShipsInfo from '../../components/ShipsInfo/ShipsInfo';
 import { warningToast } from '../../utils/helpers/warningToast';
 
-const wss = new WebSocket('ws://localhost:4000');
+const wss = new WebSocket('ws:localhost:4000');
 
 const Game = () => {
 	const [myBoard, setMyBoard] = useState<Board>(new Board());
@@ -29,6 +29,7 @@ const Game = () => {
 	const copyGameId = () => {
 		navigator.clipboard.writeText(gameId || '');
 	};
+
 
 	wss.onmessage = response => {
 		const { type, payload } = JSON.parse(response.data);

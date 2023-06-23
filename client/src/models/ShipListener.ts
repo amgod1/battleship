@@ -1,7 +1,7 @@
 import { GamingShip } from './GamingShip';
 
 export class ShipListener {
-	public ships: GamingShip[];
+	private ships: GamingShip[];
 	public current: GamingShip;
 
 	constructor() {
